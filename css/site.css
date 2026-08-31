@@ -82,6 +82,7 @@ p { max-width: 67ch; }
 .case-row:hover { padding-right: 1rem; padding-left: 1rem; background: var(--soft); }
 .case-row h3 { max-width: 27ch; margin-bottom: .7rem; font-size: clamp(1.4rem, 2.2vw, 2.05rem); }
 .case-row p { margin: 0; color: var(--grey); }
+.case-row .case-result { max-width: 60ch; color: #596064; font-size: clamp(1rem, 1.3vw, 1.12rem); font-weight: 580; line-height: 1.5; }
 .case-row .case-result strong { color: var(--ink); }
 .case-row blockquote { max-width: 52rem; margin: 1.5rem 0 0; padding: 1.25rem 1.4rem; border-left: 3px solid var(--turquoise); background: var(--soft); }
 .case-row blockquote p { color: var(--ink); font-size: .92rem; font-weight: 580; line-height: 1.55; }
@@ -181,6 +182,17 @@ p { max-width: 67ch; }
   .thinking-grid article:last-child { border-right: 0; }
   .thinking-grid h3 { min-height: 2.3em; }
   .thinking-grid article > p:last-of-type { min-height: 5.5em; }
+}
+
+@media (max-width: 767.98px) {
+  :root { --section: 4.25rem; }
+  .hero { padding-top: 3.75rem; padding-bottom: 4.25rem; }
+  .final-cta { padding: 4.5rem 0; }
+  .site-footer { padding-top: 3.75rem; }
+  .footer-main { padding-bottom: 3rem; }
+  .footer-links a, .footer-bottom a, .contact-address { min-height: 44px; }
+  .footer-legal { gap: .1rem 1.25rem; font-size: .72rem; }
+  .footer-legal a { display: inline-flex; min-height: 44px; align-items: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
