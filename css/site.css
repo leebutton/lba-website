@@ -105,6 +105,7 @@ p { max-width: 67ch; }
 .image-placeholder span, .portrait-placeholder span { font-weight: 750; }
 .image-placeholder small, .portrait-placeholder small { color: rgba(67,74,78,.72); }
 .portrait-placeholder { background: linear-gradient(160deg, #dce3df, #aebbb6); }
+.portrait-image { display: block; width: 100%; height: 380px; border-bottom: 6px solid var(--blue); object-fit: cover; object-position: 56% center; }
 .visual-panel { position: relative; display: flex; min-height: 380px; align-items: flex-end; overflow: hidden; padding: clamp(2rem, 4vw, 3.25rem); border-bottom: 6px solid var(--blue); }
 .contour-panel { background-color: #e8f2ef; background-image: linear-gradient(145deg, rgba(255,255,255,.28), rgba(86,194,182,.2)), url("../assets/creating-health-contours.svg"); background-position: center; background-size: cover; }
 .contour-panel::after { position: absolute; inset: 12%; border-top: 1px solid rgba(31,146,154,.3); border-left: 1px solid rgba(31,146,154,.22); content: ""; }
@@ -167,6 +168,7 @@ p { max-width: 67ch; }
   .case-row { grid-template-columns: 1fr 3fr; gap: clamp(1.5rem, 4vw, 4rem); }
   .image-placeholder { min-height: 480px; }
   .portrait-placeholder { min-height: 560px; }
+  .portrait-image { height: 560px; }
   .visual-panel { min-height: 520px; }
 }
 
