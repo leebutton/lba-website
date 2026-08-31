@@ -155,6 +155,8 @@ p { max-width: 67ch; }
 .footer-bottom { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.5); font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .footer-bottom a { display: inline-flex; min-height: 24px; align-items: center; color: var(--turquoise); text-decoration: none; }
 .footer-legal { display: flex; flex-wrap: wrap; gap: .45rem 2rem; margin-top: 1.35rem; padding-top: 1.35rem; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.34); font-size: .64rem; line-height: 1.5; }
+.footer-legal a { color: rgba(255,255,255,.58); text-decoration: none; }
+.footer-legal a:hover, .footer-legal a:focus { color: white; }
 
 @media (min-width: 768px) {
   body { font-size: 1.05rem; }
