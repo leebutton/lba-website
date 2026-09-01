@@ -55,8 +55,12 @@ p { max-width: 67ch; }
 .hero-lead { max-width: 760px; margin-top: 2rem; color: #586064; font-size: clamp(1.25rem, 2.2vw, 1.75rem); line-height: 1.5; }
 .hero-principle { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 0; border-top: 2px solid var(--blue); border-bottom: 1px solid var(--line); font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .hero-principle i { width: 5px; height: 5px; border-radius: 50%; background: var(--turquoise); }
-.trust-strip { padding: 1.7rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.trust-list { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 1rem 2.5rem; color: var(--grey); font-size: .79rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.trust-strip { padding: clamp(2.5rem, 4vw, 3.75rem) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fbfcfb; }
+.trust-strip .eyebrow { max-width: none; letter-spacing: .17em; }
+.trust-context { max-width: 55rem; margin: 0; color: #687074; font-size: clamp(.96rem, 1.35vw, 1.08rem); line-height: 1.55; }
+.client-logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 1rem; margin: clamp(2rem, 3vw, 2.75rem) 0 0; padding: clamp(1.25rem, 2.5vw, 2rem) 0 0; border-top: 1px solid var(--line); list-style: none; }
+.client-logo-grid li { display: flex; min-width: 0; min-height: 6rem; align-items: center; justify-content: center; padding: .5rem; }
+.client-logo-grid img { display: block; width: 100%; max-width: 180px; height: auto; }
 
 .section { padding: var(--section) 0; }
 .surface-soft { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--soft); }
@@ -165,6 +169,7 @@ p { max-width: 67ch; }
   .navbar-brand img { width: 180px; }
   .hero { padding: clamp(6rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7rem); background-image: linear-gradient(90deg, #fff 0%, rgba(255,255,255,.98) 48%, rgba(255,255,255,.72) 77%, rgba(255,255,255,.45) 100%), url("../assets/shared-boundaries.svg"); background-position: center, center right; background-size: cover, auto 115%; }
   .hero::after { display: block; }
+  .client-logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 1.5rem; }
   .case-row { grid-template-columns: 1fr 3fr; gap: clamp(1.5rem, 4vw, 4rem); }
   .image-placeholder { min-height: 480px; }
   .portrait-placeholder { min-height: 560px; }
@@ -176,7 +181,7 @@ p { max-width: 67ch; }
   .navbar-collapse { padding: 0; border-top: 0; }
   .navbar-nav { align-items: center !important; }
   .navbar-nav .btn { display: inline-block; margin-top: 0; }
-  .trust-list { justify-content: space-between; }
+  .client-logo-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .75rem; }
   .conversation-plan { grid-template-columns: 1.05fr 1.7fr; }
   .conversation-plan .btn { grid-column: 2; }
   .thinking-grid { grid-template-columns: repeat(3, 1fr); }
