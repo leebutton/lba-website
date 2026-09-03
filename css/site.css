@@ -149,7 +149,8 @@ p { max-width: 67ch; }
 .final-cta { padding: clamp(5.5rem, 9vw, 8rem) 0; color: rgba(255,255,255,.82); background: var(--blue); }
 .final-cta h2 { color: white; font-size: clamp(3.2rem, 6vw, 6rem); }
 .final-cta .btn { margin-top: 1.5rem; }
-.contact-address { display: flex; width: max-content; min-height: 24px; align-items: center; margin-top: 1rem; color: white; font-size: .8rem; text-decoration-color: rgba(255,255,255,.5); text-underline-offset: .25rem; }
+.contact-options { display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; margin-top: .8rem; }
+.contact-address { display: flex; width: max-content; min-height: 24px; align-items: center; color: white; font-size: .8rem; text-decoration-color: rgba(255,255,255,.5); text-underline-offset: .25rem; }
 .site-footer { padding: clamp(4.5rem, 7vw, 6.5rem) 0 1.75rem; color: rgba(255,255,255,.72); background: #353b3e; }
 .footer-main { padding-bottom: clamp(3.5rem, 6vw, 5.5rem); }
 .footer-logo { width: 92px; }
