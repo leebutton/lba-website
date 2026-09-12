@@ -37,7 +37,7 @@ p { max-width: 67ch; }
 .navbar-brand img { display: block; width: 155px; height: 54px; object-fit: contain; object-position: left center; }
 .navbar-nav .nav-link { padding: .65rem .85rem !important; color: var(--ink); font-size: .9rem; font-weight: 650; }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus { color: var(--blue); }
-.navbar-toggler { min-width: 44px; min-height: 44px; border: 0; box-shadow: none !important; }
+.navbar-toggler { min-width: 44px; min-height: 44px; border: 0; }
 .navbar-collapse { padding: 1rem 0 1.4rem; border-top: 1px solid var(--line); }
 .navbar-nav { align-items: stretch !important; }
 .navbar-nav .btn { display: block; margin-top: .6rem; }
@@ -274,4 +274,14 @@ p { max-width: 67ch; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
+}
+
+/* Keyboard focus follows the existing foreground colour on each surface. */
+:where(a, button, input):focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.navbar-toggler:focus { outline: 3px solid currentColor; outline-offset: 4px; }
+:where(h2, section)[tabindex="-1"]:focus { outline: 2px solid currentColor; outline-offset: 4px; }
+.legal-footer a { display: inline-flex; min-height: 24px; align-items: center; }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse { max-height: calc(100dvh - 6rem); overflow-y: auto; }
 }

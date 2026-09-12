@@ -21,9 +21,11 @@
   <meta name="twitter:image" content="https://leebutton.co.uk/assets/og.png">
   <meta name="twitter:image:alt" content="Lee Button Associates — Make progress where responsibility is shared">
   <title>Lee Button Associates — Make progress where responsibility is shared</title>
-  <link rel="icon" href="assets/lee-button-logomark-blue.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/assets/lee-button-logomark-blue.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
   <link href="assets/vendor/bootstrap/5.3.8/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/site.css?v=20260912">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,7 +84,7 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero" id="top">
       <div class="container-xl">
         <div class="row">
@@ -183,7 +185,7 @@
     <section class="section creating-health">
       <div class="container-xl">
         <div class="row g-5 align-items-center">
-          <div class="col-lg-5"><div class="visual-panel contour-panel" role="img" aria-label="Abstract contour lines representing place, community, and the wider conditions that shape health"><span>Place shapes health.</span></div></div>
+          <div class="col-lg-5"><div class="visual-panel contour-panel" ><span>Place shapes health.</span></div></div>
           <div class="col-lg-6 offset-lg-1"><p class="eyebrow">Creating Health</p><h2>Creating health takes more than healthcare.</h2><p class="lead-copy">Health is shaped by communities, relationships, housing, work, public services, voluntary organisations, and the opportunities people have to live well.</p><p>Creating Health is where I explore these wider conditions through conversations, writing, and events—and connect them to the practical work of improving health across organisational boundaries.</p><a class="text-link" href="#thinking">Explore the thinking <span aria-hidden="true">→</span></a></div>
         </div>
       </div>
@@ -298,12 +300,40 @@
   </footer>
   <script src="assets/vendor/bootstrap/5.3.8/bootstrap.bundle.min.js"></script>
   <script>
-    document.querySelectorAll('#siteNav a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth >= 992) return;
-        const menu = document.querySelector('#siteNav');
-        bootstrap.Collapse.getInstance(menu)?.hide();
+    const menu = document.querySelector('#siteNav');
+    const menuToggle = document.querySelector('.navbar-toggler');
+    const navigation = document.querySelector('.navbar');
+    const closeMenu = () => {
+      const collapse = bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false });
+      if (menu.classList.contains('collapsing')) {
+        menu.addEventListener('shown.bs.collapse', () => collapse.hide(), { once: true });
+      } else {
+        collapse.hide();
+      }
+    };
+    menu.addEventListener('show.bs.collapse', () => menuToggle.setAttribute('aria-label', 'Close navigation'));
+    menu.addEventListener('hide.bs.collapse', () => menuToggle.setAttribute('aria-label', 'Open navigation'));
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        const section = document.querySelector(link.getAttribute('href'));
+        const destination = section?.querySelector('h2') || section;
+        if (destination) {
+          destination.setAttribute('tabindex', '-1');
+          history.pushState(null, '', link.getAttribute('href'));
+          section.scrollIntoView();
+          destination.focus({ preventScroll: true });
+        }
+        if (window.innerWidth < 992) closeMenu();
       });
+    });
+    navigation.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || window.innerWidth >= 992 ||
+          menuToggle.getAttribute('aria-expanded') !== 'true') return;
+      event.preventDefault();
+      closeMenu();
+      menuToggle.focus();
     });
   </script>
 </body>
