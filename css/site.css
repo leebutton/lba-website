@@ -157,9 +157,11 @@ p { max-width: 67ch; }
 .thinking-grid article { padding: clamp(2rem, 3.5vw, 3.25rem); border-bottom: 1px solid rgba(255,255,255,.2); }
 .thinking-grid article:last-child { border-bottom: 0; }
 .thinking-type { margin: 0 0 .65rem; color: var(--paper); font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
-.thinking-grid h3, .thinking-grid article > p:last-of-type { min-height: 0; }
-.thinking-grid a, .planned-link { color: var(--paper); font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-.thinking-signup { margin-top: clamp(3rem, 5vw, 4.5rem); padding: clamp(2rem, 4vw, 3.5rem); border-top: 4px solid var(--green); background: rgba(255,255,255,.07); }
+.thinking-grid h3 { min-height: 0; }
+.thinking-grid article > p:last-child { margin-bottom: 0; }
+.thinking-link { margin: 1.25rem 0 0; }
+.thinking-link .text-link { font-size: .9rem; }
+.thinking-signup { margin-top: 1.5rem; padding: clamp(2rem, 4vw, 3.5rem); border-top: 4px solid var(--green); background: rgba(255,255,255,.07); }
 .thinking-signup .footer-label { margin-bottom: .7rem; }
 .thinking-signup h3 { margin: 0; }
 .thinking-signup p { margin-bottom: 1.25rem; }
@@ -262,7 +264,6 @@ p { max-width: 67ch; }
   .thinking-grid article { border-right: 1px solid rgba(255,255,255,.2); border-bottom: 0; }
   .thinking-grid article:last-child { border-right: 0; }
   .thinking-grid h3 { min-height: 2.3em; }
-  .thinking-grid article > p:last-of-type { min-height: 5.5em; }
   .legal-layout { grid-template-columns: minmax(180px, 1fr) minmax(0, 3fr); gap: clamp(3rem, 7vw, 7rem); }
   .legal-nav { position: sticky; top: 2rem; }
 }
